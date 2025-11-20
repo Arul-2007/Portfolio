@@ -1,30 +1,28 @@
+// src/pages/About.jsx
+
 import React from 'react';
-import { motion } from 'framer-motion';
 
 export default function About() {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.98 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.4 }}
-    >
-      <div className="card">
-        <h2>About</h2>
+    <div className="ui-card">
+      <h1 className="ui-title">About Me</h1>
 
-        <p className="muted">
-          I build web applications with a focus on clean interfaces and performant
-          code. I work confidently across the stack—React and Three.js on the
-          front-end, and Node/Express or serverless architectures on the backend.
-          I pay close attention to design, accessibility, and performance.
-        </p>
+      <p className="ui-text">
+        I am a full-stack developer who loves building interactive user
+        experiences. This portfolio is a 3D driving-based experience where my
+        Thar drives through the desert to navigate between sections.
+      </p>
 
-        <h3>Highlights</h3>
-        <ul>
-          <li>React + Three.js interactive UI development</li>
-          <li>REST & GraphQL API design</li>
-          <li>Performance optimization and accessibility</li>
-        </ul>
-      </div>
-    </motion.div>
+      <p className="ui-text">
+        My focus areas include:
+      </p>
+
+      <ul className="ui-list">
+        <li>Frontend: React, Three.js, R3F, UI/UX concepts</li>
+        <li>Backend: Node.js, Express, MongoDB, Firebase</li>
+        <li>3D Experiences: Three.js, GLTF workflows</li>
+        <li>API development & cloud integrations</li>
+      </ul>
+    </div>
   );
 }

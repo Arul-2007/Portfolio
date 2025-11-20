@@ -1,50 +1,36 @@
+// src/App.jsx
+// Main layout that combines Header, 3D Scene, and UI Overlays.
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
-import HologramNavigation from './components/HologramNavigation';
-
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import UIOverlay from './components/UIOverlay';
+import MainScene from './scenes/MainScene';
 
 import './styles.css';
 
 export default function App() {
   return (
-    <div className="app-root">
-      <Router>
-        <Header />
+    <Router>
+      {/* Top Navigation */}
+      <Header />
 
-        <main className="layout">
-          {/* Left-side content */}
-          <section className="primary">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </section>
+      {/* 3D Scene (background) */}
+      <div className="scene-container">
+        <MainScene />
+      </div>
 
-          {/* Right-side hologram navigation */}
-          <aside className="aside">
-            <HologramNavigation />
+      {/* UI Overlay (foreground content) */}
+      <UIOverlay />
 
-            <div className="card small">
-              <h4>Quick Links</h4>
-              <p className="muted">
-                Click the house to move through pages, or use the menu above.
-              </p>
-            </div>
-          </aside>
-        </main>
-
-        <footer className="site-footer">
-          © {new Date().getFullYear()} ARUL PALANIVEL
-        </footer>
-      </Router>
-    </div>
+      {/* Router structure (required even if UIOverlay uses useLocation) */}
+      <Routes>
+        <Route path="/" element={null} />
+        <Route path="/about" element={null} />
+        <Route path="/projects" element={null} />
+        <Route path="/contact" element={null} />
+      </Routes>
+    </Router>
   );
 }

@@ -1,28 +1,30 @@
+// src/pages/Contact.jsx
+
 import React from 'react';
-import { motion } from 'framer-motion';
 import { PROFILE } from '../data/profile';
 
 export default function Contact() {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-    >
-      <div className="card">
-        <h2>Contact</h2>
+    <div className="ui-card">
+      <h1 className="ui-title">Contact</h1>
 
-        <p className="muted">
-          Email:&nbsp;
-          <a href={`mailto:${PROFILE.email}`} className="link">
-            {PROFILE.email}
-          </a>
-        </p>
+      <p className="ui-text">
+        Feel free to reach out for collaborations, project discussions,
+        or technical consultations.
+      </p>
 
-        <p className="muted">
-          You may also connect via GitHub using the project links.
-        </p>
-      </div>
-    </motion.div>
+      <p className="ui-text">
+        Email:
+        <a href={`mailto:${PROFILE.email}`} className="project-link">
+          {" "}
+          {PROFILE.email}
+        </a>
+      </p>
+
+      <p className="ui-text">
+        You can also explore my GitHub repositories using the links provided
+        in the projects section.
+      </p>
+    </div>
   );
 }

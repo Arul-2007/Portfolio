@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARUL Portfolio - 3D Thar Experience</title>
+
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
+
     <meta
       name="description"
-      content="ARUL PALANIVEL Portfolio"
+      content="ARUL PALANIVEL - 3D interactive portfolio with a driving Thar in a desert environment."
     />
-    <title>ARUL Portfolio</title>
+
+    <style>
+      /* Ensures body takes full space */
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+
+      #root {
+        height: 100%;
+        width: 100%;
+      }
+
+      /* Prevent text selection during steering */
+      body {
+        user-select: none;
+      }
+    </style>
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <!-- IMPORTANT: THIS MUST EXIST -->
+    <!-- React will mount here -->
     <div id="root"></div>
-
   </body>
 </html>

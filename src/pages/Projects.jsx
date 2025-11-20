@@ -1,44 +1,32 @@
+// src/pages/Projects.jsx
+
 import React from 'react';
-import { motion } from 'framer-motion';
 import { PROJECTS } from '../data/projects';
 
 export default function Projects() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 12 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.4 }}
-    >
-      <div className="card">
-        <h2>Projects</h2>
+    <div className="ui-card">
+      <h1 className="ui-title">Projects</h1>
 
-        <div className="project-grid">
-          {PROJECTS.map((p) => (
-            <article key={p.id} className="project-card">
-              <div className="project-media">
-                {p.img ? (
-                  <img src={p.img} alt={p.title} />
-                ) : (
-                  <div className="placeholder">Image</div>
-                )}
-              </div>
+      <p className="ui-text">Here are a few projects I have worked on:</p>
 
-              <h3>{p.title}</h3>
-              <p className="muted">{p.desc}</p>
+      <div className="project-list">
+        {PROJECTS.map((p) => (
+          <div className="project-card" key={p.id}>
+            <h3 className="project-title">{p.title}</h3>
+            <p className="ui-text">{p.desc}</p>
 
-              <a
-                className="link"
-                href={p.github}
-                target="_blank"
-                rel="noreferrer"
-              >
-                View on GitHub
-              </a>
-            </article>
-          ))}
-        </div>
+            <a
+              href={p.github}
+              target="_blank"
+              rel="noreferrer"
+              className="project-link"
+            >
+              View on GitHub →
+            </a>
+          </div>
+        ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
-
