@@ -1,6 +1,6 @@
-/* ===========================
+/* =============================
    GLOBAL RESET + BASE THEME
-=========================== */
+============================= */
 
 * {
   margin: 0;
@@ -11,251 +11,206 @@
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  background: #0b0e14;
   font-family: "Inter", Arial, sans-serif;
-  color: #eaf0f7;
+  user-select: none;
+  overflow: hidden;
+  color: #e2e8f0;
 }
 
-/* ===========================
-   MAIN SCENE CONTAINER
-=========================== */
-
-.scene-container {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0; /* 3D Scene stays at bottom */
-}
-
-/* ===========================
-   HEADER
-=========================== */
+/* =============================
+   HEADER BAR
+============================= */
 
 .header-bar {
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 14px 28px;
-  background: rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(10px);
+  height: 60px;
+  background: rgba(20, 25, 33, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
+
+  padding: 0 20px;
+  z-index: 20;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-avatar {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7B61FF, #00D2FF);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #fff; font-size: 18px;
+}
+
+.brand-text { display: flex; flex-direction: column; line-height: 1.1rem; }
+.brand-name { font-size: 15px; font-weight: 700; }
+.brand-title { font-size: 12px; color: #a0aec0; }
+
+.nav-buttons { display: flex; gap: 10px; }
+.nav-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.15s;
+}
+.nav-btn:hover { background: rgba(255, 255, 255, 0.15); }
+.nav-btn.active { background: rgba(255, 255, 255, 0.22); font-weight: 600; }
+
+/* =============================
+   GAME GRID CONTAINER (CENTERED)
+============================= */
+
+.game-container {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* EXACT SIZE ONLY FROM GRID, NOT STRETCHED */
+  width: auto;
+  height: auto;
+
+  display: block;
+  z-index: 1;
+}
+
+/* =============================
+   GRID CELLS
+============================= */
+
+.row {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #444;
   position: relative;
 }
 
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.cell.path,
+.cell.home,
+.cell.projects,
+.cell.skills,
+.cell.contact,
+.cell.obstacle,
+.cell.empty {
+  background: transparent !important;
+  object-fit: contain;
+width: 100%;
+height: 100%;
+
 }
 
-.header-logo {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #7B61FF, #00D2FF);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 18px;
-  color: #fff;
+/* =============================
+   TILE IMAGES + PLAYER
+============================= */
+
+.tile-img,
+.ninja {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
 }
 
-.header-name {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.header-title {
-  font-size: 12px;
-  color: #b3bed0;
-}
-
-.header-nav {
-  display: flex;
-  gap: 10px;
-}
-
-.nav-btn,
-.nav-btn-active {
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #d8e0ea;
-  transition: 0.2s;
-}
-
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.nav-btn-active {
-  background: rgba(255, 255, 255, 0.25);
-  font-weight: 600;
-}
-
-/* ===========================
-   UI OVERLAY (foreground)
-=========================== */
+/* =============================
+   UI OVERLAY PANEL
+============================= */
 
 .ui-overlay {
   position: fixed;
-  top: 80px; /* below header */
-  left: 20px;
-  z-index: 20; /* over the 3D scene */
-  max-width: 380px;
+  top: 60px;
+  left: 0;
+
+  width: 100%;
+  height: calc(100% - 60px);
+
+  z-index: 20;
+  padding: 20px;
+  pointer-events: auto;
 }
 
-/* ===========================
-   UI Cards
-=========================== */
+.page-label {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+/* =============================
+   UI CARD STYLE
+============================= */
 
 .ui-card {
-  padding: 20px;
-  backdrop-filter: blur(14px);
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  box-shadow: 0px 6px 24px rgba(0,0,0,0.4);
+  background: rgba(20, 26, 35, 0.8);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.4);
 }
 
-.ui-title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.ui-sub {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #a9b4c7;
-}
-
+/* Typography */
+.ui-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+.ui-sub { font-size: 15px; color: #a0aec0; margin-bottom: 10px; }
 .ui-text {
   font-size: 14px;
-  color: #d5dced;
-  line-height: 1.45rem;
+  line-height: 1.4rem;
   margin-bottom: 10px;
+  color: #cbd5e1;
 }
+.ui-text-small { font-size: 12px; color: #94a3b8; margin-top: 10px; }
+.ui-list { margin-left: 18px; color: #cbd5e1; }
 
-.ui-list {
-  margin-top: 8px;
-  padding-left: 16px;
-}
+/* =============================
+   PROJECT CARDS
+============================= */
 
-.ui-list li {
-  margin-bottom: 6px;
-  color: #d4d9e2;
-  font-size: 14px;
-}
-
-/* ===========================
-   Avatar
-=========================== */
-
-.avatar-img {
-  width: 88px;
-  height: 88px;
-  border-radius: 12px;
-  margin-top: 12px;
-  object-fit: cover;
-}
-
-/* ===========================
-   Projects Page
-=========================== */
-
-.project-list {
-  margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.project-list { display: flex; flex-direction: column; gap: 10px; }
 
 .project-card {
-  padding: 14px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  transition: 0.2s;
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.15s;
 }
 
-.project-card:hover {
-  background: rgba(255, 255, 255, 0.12);
-}
+.project-card:hover { background: rgba(255,255,255,0.1); }
 
-.project-title {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
+.project-title { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
 
 .project-link {
-  display: inline-block;
-  margin-top: 6px;
   font-size: 14px;
   color: #7dd3fc;
   text-decoration: none;
 }
+.project-link:hover { text-decoration: underline; }
 
-.project-link:hover {
-  text-decoration: underline;
-}
-
-/* ===========================
+/* =============================
    RESPONSIVE
-=========================== */
+============================= */
 
 @media (max-width: 768px) {
   .ui-overlay {
-    left: 10px;
-    right: 10px;
-    max-width: none;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
   }
-
-  .header-bar {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-}
-/* ===========================
-   LOADER
-=========================== */
-
-.loader-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #e8eef9;
-  font-size: 16px;
-  text-align: center;
-}
-
-.loader-spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid rgba(255, 255, 255, 0.25);
-  border-top-color: #ffffff;
-  border-radius: 50%;
-  animation: spin 0.9s linear infinite;
-  margin-bottom: 12px;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.loader-text {
-  font-size: 14px;
-  color: #cfd8e6;
 }

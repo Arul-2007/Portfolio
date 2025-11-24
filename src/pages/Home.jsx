@@ -1,7 +1,6 @@
 // src/pages/Home.jsx
-
-import React from 'react';
-import { PROFILE } from '../data/profile';
+import React from "react";
+import { PROFILE } from "../data/profile";
 
 export default function Home() {
   return (
@@ -11,11 +10,7 @@ export default function Home() {
 
       <p className="ui-text">{PROFILE.bio}</p>
 
-      <img
-        src={PROFILE.avatarDataUrl}
-        alt="avatar"
-        className="avatar-img"
-      />
+    
     </div>
   );
 }

@@ -1,7 +1,6 @@
 // src/pages/Contact.jsx
-
-import React from 'react';
-import { PROFILE } from '../data/profile';
+import React from "react";
+import { PROFILE } from "../data/profile";
 
 export default function Contact() {
   return (
@@ -9,21 +8,25 @@ export default function Contact() {
       <h1 className="ui-title">Contact</h1>
 
       <p className="ui-text">
-        Feel free to reach out for collaborations, project discussions,
-        or technical consultations.
+        You can reach me anytime using the link below:
       </p>
 
       <p className="ui-text">
-        Email:
+        <strong>Email:</strong>
+        <br />
         <a href={`mailto:${PROFILE.email}`} className="project-link">
-          {" "}
-          {PROFILE.email}
+          {"arulpalanivel2007@gmail.com"}
         </a>
       </p>
-
-      <p className="ui-text">
-        You can also explore my GitHub repositories using the links provided
-        in the projects section.
+        <p className="ui-text">
+        <strong>GitHub:</strong>
+        <br />
+      <a href="https://github.com/Arul-2007" className="project-link">https://github.com/Arul-2007</a>
+      </p>
+    <p className="ui-text">
+        <strong>LinkedIn:</strong>
+        <br />
+      <a href="https://www.linkedin.com/in/arul-p-b1427a339/" className="project-link">https://www.linkedin.com/in/arul-p</a>
       </p>
     </div>
   );

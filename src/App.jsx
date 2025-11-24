@@ -1,36 +1,33 @@
-// src/App.jsx
-// Main layout that combines Header, 3D Scene, and UI Overlays.
+import React, { useState } from "react";
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from "./components/Header";
+import GameCanvas from "./components/GameCanvas";
+import UIOverlay from "./components/UIOverlay";
 
-import Header from './components/Header';
-import UIOverlay from './components/UIOverlay';
-import MainScene from './scenes/MainScene';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
-import './styles.css';
+import "./styles.css";
 
 export default function App() {
+  const [activePage, setActivePage] = useState(null); // null = closed
+
   return (
-    <Router>
-      {/* Top Navigation */}
+    <>
       <Header />
 
-      {/* 3D Scene (background) */}
-      <div className="scene-container">
-        <MainScene />
+      <div className="game-container">
+        <GameCanvas onPageChange={setActivePage} />
       </div>
 
-      {/* UI Overlay (foreground content) */}
-      <UIOverlay />
-
-      {/* Router structure (required even if UIOverlay uses useLocation) */}
-      <Routes>
-        <Route path="/" element={null} />
-        <Route path="/about" element={null} />
-        <Route path="/projects" element={null} />
-        <Route path="/contact" element={null} />
-      </Routes>
-    </Router>
+      <UIOverlay>
+        {activePage === "home" && <Home />}
+        {activePage === "about" && <About />}
+        {activePage === "projects" && <Projects />}
+        {activePage === "contact" && <Contact />}
+      </UIOverlay>
+    </>
   );
 }

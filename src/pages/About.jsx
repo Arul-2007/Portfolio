@@ -1,6 +1,5 @@
 // src/pages/About.jsx
-
-import React from 'react';
+import React from "react";
 
 export default function About() {
   return (
@@ -8,21 +7,20 @@ export default function About() {
       <h1 className="ui-title">About Me</h1>
 
       <p className="ui-text">
-        I am a full-stack developer who loves building interactive user
-        experiences. This portfolio is a 3D driving-based experience where my
-        Thar drives through the desert to navigate between sections.
+       I am a motivated and energetic full-stack developer with a strong focus on<br /> building modern, efficient, and user-centric applications. <br />My core expertise includes React and full-stack development, <br />where I enjoy transforming ideas into clean, functional, <br />and scalable solutions. Beyond technical skills,<br /> I am a good listener and an active, <br />collaborative individual who values clear communication <br />and continuous improvement. I am committed to learning, growing, and<br /> contributing to impactful projects that deliver real value.
       </p>
 
       <p className="ui-text">
-        My focus areas include:
+        I work with:
       </p>
 
       <ul className="ui-list">
-        <li>Frontend: React, Three.js, R3F, UI/UX concepts</li>
-        <li>Backend: Node.js, Express, MongoDB, Firebase</li>
-        <li>3D Experiences: Three.js, GLTF workflows</li>
-        <li>API development & cloud integrations</li>
+        <li>React, JavaScript, HTML, CSS</li>
+        <li>Node.js,  MongoDB</li>
+        <li>UI Design, Animations, Game-like interfaces</li>
       </ul>
+
+   
     </div>
   );
 }

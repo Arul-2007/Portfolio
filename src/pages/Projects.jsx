@@ -1,25 +1,19 @@
 // src/pages/Projects.jsx
-
-import React from 'react';
-import { PROJECTS } from '../data/projects';
+import React from "react";
+import { PROJECTS } from "../data/projects";
 
 export default function Projects() {
   return (
     <div className="ui-card">
       <h1 className="ui-title">Projects</h1>
 
-      <p className="ui-text">Here are a few projects I have worked on:</p>
-
       <div className="project-list">
         {PROJECTS.map((p) => (
           <div className="project-card" key={p.id}>
             <h3 className="project-title">{p.title}</h3>
             <p className="ui-text">{p.desc}</p>
-
             <a
-              href={p.github}
-              target="_blank"
-              rel="noreferrer"
+              href="https://github.com/Arul-2007/E-commerce-website"
               className="project-link"
             >
               View on GitHub →
@@ -27,6 +21,8 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+    
     </div>
   );
 }
