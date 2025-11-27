@@ -36,13 +36,13 @@ function Contact() {
         </form>
         <div className="contact-info">
           <h3>Other Ways to Reach Me</h3>
-          <p>Email: your-email@example.com</p>
-          <p>Location: Your City, Country</p>
+          <p>Email: arulpalanivel2007@gmail.com</p>
+          <p>Location: Namakkal,Tamilnadu,India</p>
           <p>
-            GitHub: <a href="#">github.com/your-username</a>
+            GitHub: <a href="https://github.com/Arul-2007">GitHub Profile</a>
           </p>
           <p>
-            LinkedIn: <a href="#">linkedin.com/in/your-profile</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/arul-p-b1427a339/">LinkedIn Profile</a>
           </p>
         </div>
       </div>

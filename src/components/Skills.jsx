@@ -2,13 +2,18 @@
 import React from "react";
 
 const skillsTimeline = [
+   {
+    title: "Fire store and Mango DB",
+    description: "Connecting the sites with an backend database",
+    level: 90,
+  },
   {
     title: "React Development",
     description: "Building interactive websites and UI components.",
     level: 90,
   },
   {
-    title: "JavaScript ES6+",
+    title: "JavaScript ",
     description: "Writing modern, clean and modular JavaScript code.",
     level: 88,
   },

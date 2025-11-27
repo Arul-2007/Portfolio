@@ -3,27 +3,28 @@ import React from "react";
 
 const projects = [
   {
-    title: "Creative Portfolio",
+    title: "Stationery E-Commerce Website",
     description:
-      "A gradient-themed portfolio built with React, showcasing animations and smooth scrolling.",
-    tech: ["React", "CSS", "Vite"],
-    link: "#",
+      "A fully responsive e-commerce website developed for a stationery store with product listings, cart pages, and user-friendly navigation.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/Arul-2007/E-commerce-website",
   },
   {
-    title: "Interactive Dashboard",
+    title: "Flow-Chart Movement Game",
     description:
-      "A responsive dashboard with charts, filters, and real-time UI updates.",
+      "A simple interactive game featuring object navigation through flow-based mechanics, built using React to create an engaging experience.",
     tech: ["React", "JavaScript"],
-    link: "#",
+    link: "https://github.com/Arul-2007/Flow-chart-game",
   },
   {
-    title: "Landing Page Experience",
+    title: "Personal Portfolio Website",
     description:
-      "Modern landing page with scroll-based animations and responsive layout.",
-    tech: ["HTML", "CSS", "JS"],
-    link: "#",
+      "A modern and animated portfolio website built to showcase my work, skills, and creative development approach using React.",
+    tech: ["React", "JavaScript"],
+    link: "https://github.com/Arul-2007/Portfolio",
   },
 ];
+
 
 function Projects() {
   return (
@@ -48,7 +49,7 @@ function Projects() {
               target="_blank"
               rel="noreferrer"
             >
-              View Project
+              View Project in GitHub
             </a>
           </article>
         ))}
