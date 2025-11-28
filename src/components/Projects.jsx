@@ -29,6 +29,7 @@ const projects = [
 function Projects() {
   return (
     <div className="section-container">
+   
       <h2 className="section-title">Projects</h2>
       <p className="section-subtitle">
         A selection of work that reflects how I think and build.
@@ -52,7 +53,7 @@ function Projects() {
               View Project in GitHub
             </a>
           </article>
-        ))}
+        ))} 
       </div>
     </div>
   );

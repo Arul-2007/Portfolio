@@ -1,5 +1,6 @@
 // src/components/Contact.jsx
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Contact() {
   return (
@@ -37,13 +38,16 @@ function Contact() {
         <div className="contact-info">
           <h3>Other Ways to Reach Me</h3>
           <p>Email: arulpalanivel2007@gmail.com</p>
-          <p>Location: Namakkal,Tamilnadu,India</p>
-          <p>
-            GitHub: <a href="https://github.com/Arul-2007">GitHub Profile</a>
-          </p>
-          <p>
-            LinkedIn: <a href="https://www.linkedin.com/in/arul-p-b1427a339/">LinkedIn Profile</a>
-          </p>
+          <p>Location: Namakkal,Tamil Nadu,India</p>
+         <div className="social-links">
+  <a href="https://github.com/Arul-2007" target="_blank" rel="noreferrer">
+    <FaGithub size={28} />
+  </a>
+  <a href="https://www.linkedin.com/in/arul-p-b1427a339/" target="_blank" rel="noreferrer">
+    <FaLinkedin size={28} />
+  </a>
+</div>
+
         </div>
       </div>
     </div>

@@ -1,13 +1,15 @@
 // src/components/Hero.jsx
 import React from "react";
 import Character from "../components/Character";
-import ObitoSprite from "../assets/obito/idle.png";
-import RinSprite from "../assets/rin/idle.png";
+import HeroGif from "../assets/Welcome.gif";  // Update path as needed
+
 
 function Hero() {
   return (
     <div className="hero">
       <div className="hero-content">
+       
+    
         <p className="hero-tagline">Creative Developer & Problem Solver</p>
         <h1>
           Hi, I&apos;m <span className="hero-name">Arul Palanivel</span>
@@ -17,23 +19,43 @@ function Hero() {
         </p>
         <br />
         <br />
-        <div className="hero-actions">
-          <a href="#projects" className="btn-primary">
-            View Projects
-          </a>
-          <a href="#contact" className="btn-secondary">
-            Contact Me
-          </a>
-        </div>
-      </div>
-      <div className="hero-orbit">
-        <div className="hero-avatar">
-       {/* Obito Animation */}
-      <Character sprite={ObitoSprite} />
+       <div className="hero-actions">
+  <button
+    className="btn-primary"
+    onClick={() => {
+      document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+    }}
+  >
+    View Projects
+  </button>
 
-      {/* Rin Animation */}
-      <Character sprite={RinSprite} />
-        </div>
+  <button
+    className="btn-secondary"
+    onClick={() => {
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }}
+  >
+    Contact Me
+  </button>
+</div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      
+      <div className="hero-orbit">
+  <div className="hero-avatar">
+    <img
+  src={HeroGif}
+  alt="Hero GIF"
+  className="hero-gif"
+/>
+
+  </div>
+
+
         <div className="orbit orbit-1"></div>
         <div className="orbit orbit-2"></div>
         <div className="orbit orbit-3"></div>

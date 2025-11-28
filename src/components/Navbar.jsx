@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="nav-logo">MyPortfolio</div>
+      <div className="nav-logo"><h1>MY_Portfolio</h1></div>
       <nav className={`nav-links ${open ? "nav-open" : ""}`}>
         <button onClick={() => handleNavClick("home")}>Home</button>
         <button onClick={() => handleNavClick("about")}>About</button>

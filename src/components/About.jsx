@@ -4,11 +4,16 @@ import React from "react";
 function About() {
   return (
     <div className="section-container">
+    
+       
       <h2 className="section-title">About Me</h2>
       <p className="section-subtitle">
+     
        I am Arul, a dedicated Full Stack Developer who enjoys building clean, user-friendly digital experiences. <br /> I combine strong technical skills with a thoughtful and organized workflow. <br />I focus on understanding user needs, crafting efficient solutions, and delivering polished results with consistency and attention to detail. <br />
       </p>
+       
       <div className="about-grid">
+        
         <div className="about-card">
           <h3>Who I Am</h3>
           <p>
@@ -28,7 +33,14 @@ function About() {
           </p>
         </div>
       </div>
+      <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
     </div>
+    
   );
 }
 
