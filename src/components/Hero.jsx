@@ -2,14 +2,10 @@
 import React from "react";
 import Character from "../components/Character";
 import HeroGif from "../assets/Welcome.gif";  // Update path as needed
-
-
 function Hero() {
   return (
     <div className="hero">
       <div className="hero-content">
-       
-    
         <p className="hero-tagline">Creative Developer & Problem Solver</p>
         <h1>
           Hi, I&apos;m <span className="hero-name">Arul Palanivel</span>
@@ -28,7 +24,6 @@ function Hero() {
   >
     View Projects
   </button>
-
   <button
     className="btn-secondary"
     onClick={() => {
@@ -38,7 +33,6 @@ function Hero() {
     Contact Me
   </button>
 </div>
-
         <br />
         <br />
         <br />
@@ -52,10 +46,7 @@ function Hero() {
   alt="Hero GIF"
   className="hero-gif"
 />
-
   </div>
-
-
         <div className="orbit orbit-1"></div>
         <div className="orbit orbit-2"></div>
         <div className="orbit orbit-3"></div>
@@ -63,5 +54,4 @@ function Hero() {
     </div>
   );
 }
-
 export default Hero;
